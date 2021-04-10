@@ -29,27 +29,26 @@
                         <!-- this button is basically behaving like a checkbox, but in order to
                     have a uniform look with the other buttons in the header, we are not using
                     a checkbox anymore. -->
-                        <button onclick="toggleSound()" class="dialog-button header-button"
-                            alt="{{.Translation.Get "toggle-soundeffects"}}"
-                            title="{{.Translation.Get "toggle-soundeffects"}}">
+                        <button onclick="toggleSound()" class="dialog-button header-button" alt="{{.Translation.Get "
+                            toggle-soundeffects"}}" title="{{.Translation.Get " toggle-soundeffects"}}">
                             <img id="sound-toggle-label" class="header-button-image" />
                         </button>
                         <button onclick="showNameChangeDialog()" class="dialog-button header-button"
-                            alt="{{.Translation.Get "change-your-name"}}"
-                            title="{{.Translation.Get "change-your-name"}}">
+                            alt="{{.Translation.Get " change-your-name"}}" title="{{.Translation.Get "
+                            change-your-name"}}">
                             <img src="{{.RootPath}}/resources/user.svg" class="header-button-image" />
                         </button>
                     </div>
                     <div id="word-container"></div>
                     <div>
                         <button id="kick-button" style="display: none;" onclick="showKickDialog()"
-                            class="dialog-button header-button" alt="{{.Translation.Get "votekick-a-player"}}"
-                            title="{{.Translation.Get "votekick-a-player"}}">
+                            class="dialog-button header-button" alt="{{.Translation.Get " votekick-a-player"}}"
+                            title="{{.Translation.Get " votekick-a-player"}}">
                             <img src="{{.RootPath}}/resources/kick.png" class="header-button-image" />
                         </button>
                         <button id="lobby-settings-button" style="display: none;" onclick="showLobbySettingsDialog()"
-                            class="dialog-button header-button" alt="{{.Translation.Get "change-lobby-settings"}}"
-                            title="{{.Translation.Get "change-lobby-settings"}}">
+                            class="dialog-button header-button" alt="{{.Translation.Get " change-lobby-settings"}}"
+                            title="{{.Translation.Get " change-lobby-settings"}}">
                             <img src="{{.RootPath}}/resources/settings.svg" class="header-button-image" />
                         </button>
                     </div>
@@ -78,8 +77,8 @@
                             <span class="dialog-title">{{.Translation.Get "choose-a-word"}}</span>
                             <div class="center-dialog-content">
                                 <div class="word-button-container">
-                                    <button id="word-button-zero" class="dialog-button"
-                                        onclick="chooseWord(0)"></button>
+                                    <p>Bella scelta, sono confuso...</p>
+                                    <button id="word-button-zero" class="dialog-button" onclick="chooseWord()"></button>
                                 </div>
                             </div>
                         </div>
@@ -93,12 +92,15 @@
                                         <input class="namechange-field" type="text"
                                             id="namechange-field-start-dialog"></input>
                                         <button class="dialog-button"
-                                            onclick="changeName(document.getElementById('namechange-field-start-dialog').value)">{{.Translation.Get "change"}}</button>
-                                        <button class="dialog-button" onclick="changeName('')">{{.Translation.Get "randomize"}}</button>
+                                            onclick="changeName(document.getElementById('namechange-field-start-dialog').value)">{{.Translation.Get
+                                            "change"}}</button>
+                                        <button class="dialog-button" onclick="changeName('')">{{.Translation.Get
+                                            "randomize"}}</button>
                                     </div>
                                 </div>
                                 <div class="button-center-wrapper">
-                                    <button class="dialog-button" onclick="startGame()">{{.Translation.Get "start"}}</button>
+                                    <button class="dialog-button" onclick="startGame()">{{.Translation.Get
+                                        "start"}}</button>
                                 </div>
                             </div>
                         </div>
@@ -113,8 +115,10 @@
                                         <input class="namechange-field" type="text"
                                             id="namechange-field-unstarted-dialog"></input>
                                         <button class="dialog-button"
-                                            onclick="changeName(document.getElementById('namechange-field-unstarted-dialog').value)">{{.Translation.Get "change"}}</button>
-                                        <button class="dialog-button" onclick="changeName('')">{{.Translation.Get "randomize"}}</button>
+                                            onclick="changeName(document.getElementById('namechange-field-unstarted-dialog').value)">{{.Translation.Get
+                                            "change"}}</button>
+                                        <button class="dialog-button" onclick="changeName('')">{{.Translation.Get
+                                            "randomize"}}</button>
                                     </div>
                                 </div>
                             </div>
@@ -134,8 +138,10 @@
                                     <div style="display: flex; flex-direction: row;">
                                         <input class="namechange-field" type="text" id="namechange-field"></input>
                                         <button class="dialog-button"
-                                            onclick="changeName(document.getElementById('namechange-field').value)">{{.Translation.Get "change"}}</button>
-                                        <button class="dialog-button" onclick="changeName('')">{{.Translation.Get "randomize"}}</button>
+                                            onclick="changeName(document.getElementById('namechange-field').value)">{{.Translation.Get
+                                            "change"}}</button>
+                                        <button class="dialog-button" onclick="changeName('')">{{.Translation.Get
+                                            "randomize"}}</button>
                                     </div>
                                     <div class="button-center-wrapper">
                                         <button class="dialog-button"
@@ -160,16 +166,15 @@
                                             value="{{.Rounds}}" />
                                         <b>{{.Translation.Get "max-players-setting"}}</b>
                                         <input id="lobby-settings-max-players" type="number" name="max_players"
-                                            min="{{.MinMaxPlayers}}" max="{{.MaxMaxPlayers}}"
-                                            value="{{.MaxPlayers}}" />
+                                            min="{{.MinMaxPlayers}}" max="{{.MaxMaxPlayers}}" value="{{.MaxPlayers}}" />
                                         <b>{{.Translation.Get "public-lobby-setting"}}</b>
-                                        <input id="lobby-settings-public" type="checkbox" name="public" {{if eq
-                                            .Public true}}checked{{end}} />
+                                        <input id="lobby-settings-public" type="checkbox" name="public" {{if eq .Public
+                                            true}}checked{{end}} />
                                         <b>{{.Translation.Get "custom-words-chance-setting"}}</b>
                                         <div style="display: flex;">
                                             0%
-                                            <input style="flex: 1;" id="lobby-settings-custom-words-chance"
-                                                type="range" name="custom_words_chance" min="1" max="100"
+                                            <input style="flex: 1;" id="lobby-settings-custom-words-chance" type="range"
+                                                name="custom_words_chance" min="1" max="100"
                                                 value="{{.CustomWordsChance}}">
                                             100%
                                         </div>
@@ -180,8 +185,7 @@
                                                 <b>{{.Translation.Get "players-per-ip-limit-setting"}}</b>
                                                 <input id="lobby-settings-clients-per-ip-limit" type="number"
                                                     name="clients_per_ip_limit" min="{{.MinClientsPerIPLimit}}"
-                                                    max="{{.MaxClientsPerIPLimit}}"
-                                                    value="{{.ClientsPerIPLimit}}" />
+                                                    max="{{.MaxClientsPerIPLimit}}" value="{{.ClientsPerIPLimit}}" />
                                                 <b>{{.Translation.Get "enable-votekick-setting"}}</b>
                                                 <input id="lobby-settings-enable-votekick" type="checkbox"
                                                     name="enable_votekick" {{if eq .EnableVotekick
@@ -219,9 +223,10 @@
 
             <div id="toolbox">
                 <input id="color-picker" class="toolbox-group" type="color" onchange="setColor()" value="#000000"
-                    alt="{{.Translation.Get "change-active-color"}}" title="{{.Translation.Get "change-active-color"}}">
-                <div class="color-button-container toolbox-group"
-                    alt="{{.Translation.Get "change-active-color"}}" title="{{.Translation.Get "change-active-color"}}">
+                    alt="{{.Translation.Get " change-active-color"}}" title="{{.Translation.Get "
+                    change-active-color"}}">
+                <div class="color-button-container toolbox-group" alt="{{.Translation.Get " change-active-color"}}"
+                    title="{{.Translation.Get " change-active-color"}}">
                     <!-- These buttons use !important for their color in order
                 to prevent hover and active colors to appear. -->
                     <div class="color-button-row">
@@ -291,7 +296,7 @@
                         <div onmousedown="document.getElementById('tool-type-pencil').click()"
                             onmouseup="document.getElementById('tool-type-pencil').click()"
                             class="line-width-button-content">
-                            <span title="{{.Translation.Get "use-pencil"}}" alt="{{.Translation.Get "use-pencil"}}"
+                            <span title="{{.Translation.Get " use-pencil"}}" alt="{{.Translation.Get " use-pencil"}}"
                                 id="tool-type-pencil-button" style="font-size: 2rem;">✏️</span>
                         </div>
                     </label>
@@ -301,8 +306,8 @@
                         <div onmousedown="document.getElementById('tool-type-fill').click()"
                             onmouseup="document.getElementById('tool-type-fill').click()"
                             class="line-width-button-content">
-                            <img alt="{{.Translation.Get "use-fill-bucket"}}" title="{{.Translation.Get "use-fill-bucket"}}"
-                                src="{{.RootPath}}/resources/fill.svg" width="40px" height="40px" />
+                            <img alt="{{.Translation.Get " use-fill-bucket"}}" title="{{.Translation.Get "
+                                use-fill-bucket"}}" src="{{.RootPath}}/resources/fill.svg" width="40px" height="40px" />
                         </div>
                     </label>
                     <label for="tool-type-rubber">
@@ -311,7 +316,7 @@
                         <div onmousedown="document.getElementById('tool-type-rubber').click()"
                             onmouseup="document.getElementById('tool-type-rubber').click()"
                             class="line-width-button-content">
-                            <img alt="{{.Translation.Get "use-eraser"}}" title="{{.Translation.Get "use-eraser"}}"
+                            <img alt="{{.Translation.Get " use-eraser"}}" title="{{.Translation.Get " use-eraser"}}"
                                 src="{{.RootPath}}/resources/rubber.svg" width="40px" height="40px" />
                         </div>
                     </label>
@@ -322,9 +327,9 @@
                             onchange="setLineWidth(8)" type="radio" name="line-width" checked>
                         <div onmousedown="document.getElementById('size-8-button').click()"
                             onmouseup="document.getElementById('size-8-button').click()"
-                            class="line-width-button-content"
-                            alt="{{printf (.Translation.Get "change-pencil-size-to") "8"}}"
-                            title="{{printf (.Translation.Get "change-pencil-size-to") "8"}}">
+                            class="line-width-button-content" alt="{{printf (.Translation.Get "
+                            change-pencil-size-to") "8" }}" title="{{printf (.Translation.Get "
+                            change-pencil-size-to") "8" }}">
                             <div class="dot" style="width: 8px; height: 8px"></div>
                         </div>
                     </label>
@@ -333,9 +338,9 @@
                             onchange="setLineWidth(16)" type="radio" name="line-width">
                         <div onmousedown="document.getElementById('size-16-button').click()"
                             onmouseup="document.getElementById('size-16-button').click()"
-                            class="line-width-button-content"
-                            alt="{{printf (.Translation.Get "change-pencil-size-to") "16"}}"
-                            title="{{printf (.Translation.Get "change-pencil-size-to") "16"}}">
+                            class="line-width-button-content" alt="{{printf (.Translation.Get "
+                            change-pencil-size-to") "16" }}" title="{{printf (.Translation.Get "
+                            change-pencil-size-to") "16" }}">
                             <div class="dot" style="width: 16px; height: 16px"></div>
                         </div>
                     </label>
@@ -344,9 +349,9 @@
                             onchange="setLineWidth(24)" type="radio" name="line-width">
                         <div onmousedown="document.getElementById('size-24-button').click()"
                             onmouseup="document.getElementById('size-24-button').click()"
-                            class="line-width-button-content"
-                            alt="{{printf (.Translation.Get "change-pencil-size-to") "24"}}"
-                            title="{{printf (.Translation.Get "change-pencil-size-to") "24"}}">
+                            class="line-width-button-content" alt="{{printf (.Translation.Get "
+                            change-pencil-size-to") "24" }}" title="{{printf (.Translation.Get "
+                            change-pencil-size-to") "24" }}">
                             <div class="dot" style="width: 24px; height: 24px"></div>
                         </div>
                     </label>
@@ -355,24 +360,24 @@
                             onchange="setLineWidth(32)" type="radio" name="line-width">
                         <div onmousedown="document.getElementById('size-32-button').click()"
                             onmouseup="document.getElementById('size-32-button').click()"
-                            class="line-width-button-content"
-                            alt="{{printf (.Translation.Get "change-pencil-size-to") "32"}}"
-                            title="{{printf (.Translation.Get "change-pencil-size-to") "32"}}">
+                            class="line-width-button-content" alt="{{printf (.Translation.Get "
+                            change-pencil-size-to") "32" }}" title="{{printf (.Translation.Get "
+                            change-pencil-size-to") "32" }}">
                             <div class="dot" style="width: 32px; height: 32px"></div>
                         </div>
                     </label>
                 </div>
                 <!--We won't make this button easier to click, as there's no going back. -->
                 <button class="canvas-button toolbox-group" style="font-size: 2rem;" onclick="clearCanvasAndSendEvent()"
-                    alt="{{.Translation.Get "clear-canvas"}}" title="{{.Translation.Get "clear-canvas"}}">🗑
+                    alt="{{.Translation.Get " clear-canvas"}}" title="{{.Translation.Get " clear-canvas"}}">🗑
                 </button>
             </div>
 
             <div id="chat">
                 <div id="message-container"></div>
                 <form class="message-input-form" onsubmit="return sendMessage()">
-                    <input id="message-input" type="text" autocomplete="off"
-                        placeholder="{{.Translation.Get "message-input-placeholder"}}" />
+                    <input id="message-input" type="text" autocomplete="off" placeholder="{{.Translation.Get "
+                        message-input-placeholder"}}" />
                 </form>
             </div>
         </div>
@@ -382,8 +387,8 @@
 
     <script type="text/javascript" src="{{.RootPath}}/resources/floodfill.js"></script>
     <script type="text/javascript">
-        String.prototype.format = function() {
-            return [...arguments].reduce((p,c) => p.replace(/%s/,c), this);
+        String.prototype.format = function () {
+            return [...arguments].reduce((p, c) => p.replace(/%s/, c), this);
         };
 
         let socketIsConnecting = false;
@@ -409,9 +414,9 @@
                 //connect, this means that we could never even establish a connection.
                 if (socket.readyState != 1 && !hasSocketEverConnected) {
                     socketIsConnecting = false;
-                    showTextDialog("connection-error-dialog", 
-                    '{{.Translation.Get "error-connecting"}}',
-                    '{{.Translation.Get "error-connecting-text"}}');
+                    showTextDialog("connection-error-dialog",
+                        '{{.Translation.Get "error-connecting"}}',
+                        '{{.Translation.Get "error-connecting-text"}}');
                     console.log("Error establishing connection: ", error);
                 } else {
                     console.log("Socket error: ", error)
@@ -446,7 +451,7 @@
             //Since the content is constant, there's no need to ever show two.
             if (previousReconnectDialog === undefined || previousReconnectDialog === null) {
                 showTextDialog(reconnectDialogId, '{{.Translation.Get "connection-lost"}}',
-                    '{{.Translation.Get "connection-lost-text"}}' );
+                    '{{.Translation.Get "connection-lost-text"}}');
             }
         }
 
@@ -510,8 +515,6 @@
         const restartButton = document.getElementById("restart-button");
         const wordDialog = document.getElementById("word-dialog");
         const wordButtonZero = document.getElementById("word-button-zero");
-        const wordButtonOne = document.getElementById("word-button-one");
-        const wordButtonTwo = document.getElementById("word-button-two");
 
         const kickDialog = document.getElementById("kick-dialog");
         const kickDialogPlayers = document.getElementById("kick-dialog-players");
@@ -651,8 +654,8 @@
         //The drawing board has a base size. This base size results in a certain ratio
         //that the actual canvas has to be resized accordingly too. This is needed
         //since not every client has the same screensize.
-        let baseWidth = {{.DrawingBoardBaseWidth}};
-        let baseHeight = {{.DrawingBoardBaseHeight}};
+        let baseWidth = {{.DrawingBoardBaseWidth }};
+        let baseHeight = {{.DrawingBoardBaseHeight }};
         let boardRatio = baseWidth / baseHeight;
 
         // Moving this here to extract the context after resizing
@@ -860,10 +863,10 @@
             return false;
         }
 
-        function chooseWord(index) {
+        function chooseWord() {
             socket.send(JSON.stringify({
                 type: "choose-word",
-                data: index
+                data: 0
             }));
             allowDrawing = true;
             updateCursor();
@@ -984,7 +987,7 @@
                 } else if (parsed.type === "your-turn") {
                     playWav('{{.RootPath}}/resources/your-turn.wav');
                     waitChooseDialog.style.visibility = "hidden";
-                    promptWords(parsed.data[0], parsed.data[1], parsed.data[2]);
+                    promptWords(parsed.data[0]);
                 } else if (parsed.type === "drawing") {
                     applyDrawData(parsed.data);
                 } else if (parsed.type === "kick-vote") {
@@ -1118,7 +1121,7 @@
                         if (player.rank == 1) {
                             gameOverDialogTitle.innerText = '{{.Translation.Get "game-over-win"}}';
                         } else {
-                            
+
                             gameOverDialogTitle.innerText = '{{.Translation.Get "game-over"}}'.format(player.rank, player.score);
                         }
                     }
@@ -1155,10 +1158,8 @@
             }
         }
 
-        function promptWords(wordOne, wordTwo, wordThree) {
+        function promptWords(wordOne) {
             wordButtonZero.textContent = wordOne;
-            wordButtonOne.textContent = wordTwo;
-            wordButtonTwo.textContent = wordThree;
             wordDialog.style.visibility = "visible";
         }
 
@@ -1451,7 +1452,7 @@
             //it's own parent, causing overflow-y to not take effect, since the parent has
             //no height constraint.
             //This workaround doesn't affect the portrait view.
-            chat.style.maxHeight = drawingBoard.clientHeight+"px";
+            chat.style.maxHeight = drawingBoard.clientHeight + "px";
         }
 
         //Call intially to correct initial state
