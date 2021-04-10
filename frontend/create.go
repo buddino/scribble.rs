@@ -35,8 +35,8 @@ func createDefaultLobbyCreatePageData() *LobbyCreatePageData {
 		Rounds:            "3",
 		MaxPlayers:        "12",
 		CustomWordsChance: "50",
-		ClientsPerIPLimit: "4",
-		EnableVotekick:    "true",
+		ClientsPerIPLimit: "10",
+		EnableVotekick:    "false",
 		Language:          "italian",
 	}
 }
